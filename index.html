@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-cats_vs_dogs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/09/cats_vs_dogs/" class="article-date">
+  <time datetime="2019-09-09T15:33:07.939Z" itemprop="datePublished">2019-09-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="cats-vs-dogs"><a href="#cats-vs-dogs" class="headerlink" title="cats_vs_dogs"></a>cats_vs_dogs</h1><p>Typora 编辑器<br><a href="https://github.com/jizhenjun/cats_vs_dogs_with_small_datasets" target="_blank" rel="noopener">https://github.com/jizhenjun/cats_vs_dogs_with_small_datasets</a><br>数据集：kaggle 猫狗大战<br>训练集：<a href="https://www.kaggle.com/sbgyshds/cat-vs-dogs-with-small-datasets" target="_blank" rel="noopener">https://www.kaggle.com/sbgyshds/cat-vs-dogs-with-small-datasets</a> train_after_crop.zip<br>验证集：<a href="https://www.kaggle.com/sbgyshds/cat-vs-dogs-with-small-datasets" target="_blank" rel="noopener">https://www.kaggle.com/sbgyshds/cat-vs-dogs-with-small-datasets</a> validation_with_group.zip<br>模型下载：<a href="https://www.kaggle.com/sbgyshds/cat-vs-dogs-with-small-datasets" target="_blank" rel="noopener">https://www.kaggle.com/sbgyshds/cat-vs-dogs-with-small-datasets</a> models.zip  </p>
+<h2 id="模型说明"><a href="#模型说明" class="headerlink" title="模型说明"></a>模型说明</h2><p>k_1_dnn_250_250.h5 dnn模型，img_size为250<em>250，5折验证<br>k_2_dnn_250_250.h5 dnn模型，img_size为250</em>250，5折验证<br>k_3_dnn_250_250.h5 dnn模型，img_size为250<em>250，5折验证<br>k_4_dnn_250_250.h5 dnn模型，img_size为250</em>250，5折验证<br>k_5_dnn_250_250.h5 dnn模型，img_size为250*250，5折验证  </p>
+<h2 id="模型下载"><a href="#模型下载" class="headerlink" title="模型下载"></a>模型下载</h2><p>链接: <a href="https://pan.baidu.com/s/1hIJVAX082FM6WaVI25paUg" target="_blank" rel="noopener">https://pan.baidu.com/s/1hIJVAX082FM6WaVI25paUg</a> 提取码: fd76</p>
+<h2 id="实验结果解读"><a href="#实验结果解读" class="headerlink" title="实验结果解读"></a>实验结果解读</h2><h3 id="实验目标"><a href="#实验目标" class="headerlink" title="实验目标"></a>实验目标</h3><p>阅读keras文档中的小数据集深度学习一文，了解目前能到达的精度，<br>发现在借助迁移学习的前提下，能轻松到达百分之94的准确率。<br>但是迁移学习的数据集是imagenet，含有猫狗，因此提出问题，不借助迁移学习能将精度提高到多少</p>
+<h3 id="实验准备"><a href="#实验准备" class="headerlink" title="实验准备"></a>实验准备</h3><p>数据集选择了猫狗各1000张图片，模型选择keras文档中的三层卷积网络模型、alexnet与17层的cnn网络。<br>超参数方面，经过简单试验初步选择，决定采用dnn与(250,250)的图像大小。<br>从试验结果来看，越深的网络适用的图像大小越大，数据增广对小数据集的提升极大</p>
+<h3 id="数据清洗"><a href="#数据清洗" class="headerlink" title="数据清洗"></a>数据清洗</h3><p>用作者本人开发的bbox工具将图片中的猫狗裁剪出，并剔除一部分有问题的训练数据。<br>从原始数据来看，猫的图片中影响结果的噪声较多（比如人的手），狗相对好一些</p>
+<p>###第一次训练<br>采用5折验证，每一次的训练集准确率能到达98%，验证集准确率为88%-90%，从验证集的结果来看，<br>模型提取的姿态方面的特征较多，对光照与猫狗的部位细节的特征提取的较为不好.<br>若将特征向量用svm进行分类，准确率大概为78%.  </p>
+<h3 id="进一步优化"><a href="#进一步优化" class="headerlink" title="进一步优化"></a>进一步优化</h3><p>细粒度图像分类模型(MASK_CNN,双线性CNN)</p>
+<h3 id="第二次训练"><a href="#第二次训练" class="headerlink" title="第二次训练"></a>第二次训练</h3><p>将前一步骤中已经训练好的网络通过bilinear方式进行连接。<br>此时再将整个网络训练几个epoch（会存在过拟合），验证集上的loss能下降到0.32  </p>
+<p>由于一次操作失误，误利用未经bbox裁剪的数据进行训练，发现能够将loss突破至0.3以下，<br>经过思考与实验，将训练集设置为未经bbox的数值，数据增广的幅度减小一半（各项系数减半），<br>反复调整bilinear cnn训练时的learning rate，得到验证集0.26左右的loss，提交至kaggle，结果为0.26217。（单折模型）<br>验证集的准确度则基本在90%以上</p>
+<p>五折模型各自的loss分别为0.26217, 0.23804, 0.29331, 0.26660, 0.30656<br>将结果限定在[0.005,0.995]之后，结果大概会提升千分点的样子，这不是我们现在的瓶颈所在。<br>可以猜测模型预测的正确率尚可，但是对于预测结果不够肯定。</p>
+<h3 id="模型融合"><a href="#模型融合" class="headerlink" title="模型融合"></a>模型融合</h3><p>融合之后的模型的提交loss为：<br>平均融合0.21060<br>平均融合(将结果限定在[0.005,0.995]间)0.20927<br>平均融合(结果为离散值0,1)2.70787<br>平均融合(结果为离散值0.005,0.995)0.42<br>投票融合2.99246<br>根据结果的loss反推正确率可得在测试集上的结果大概为92%</p>
+<h2 id="实验结论"><a href="#实验结论" class="headerlink" title="实验结论"></a>实验结论</h2><p>优化器无脑adam，最后一层激活函数无脑sigmoid（二分类），batch_size设成2的幂。<br>数据增广和bbox效果拔群，图像大小和网络的深度正相关，</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/09/cats_vs_dogs/" data-id="ck0ckien50001astvhgu4co16" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-gaoshuai" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/09/gaoshuai/" class="article-date">
+  <time datetime="2019-09-09T15:24:40.000Z" itemprop="datePublished">2019-09-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/09/gaoshuai/">gaoshuai</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="生命"><a href="#生命" class="headerlink" title="生命"></a>生命</h1><p>高帅的博客</p>
+<p><strong>测试专用</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/09/gaoshuai/" data-id="ck0ckiemt0000astv49jtft72" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/09/hello-world/" class="article-date">
+  <time datetime="2019-09-09T15:17:54.734Z" itemprop="datePublished">2019-09-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/09/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/09/hello-world/" data-id="ck0ckiena0002astv71u5yyi0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/09/cats_vs_dogs/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/09/gaoshuai/">gaoshuai</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/09/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
