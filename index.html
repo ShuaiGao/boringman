@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="冬瓜的博客">
   
-    <link rel="alternate" href="/atom.xml" title="冬瓜的博客" type="application/atom+xml">
+    <link rel="alternate" href="/boringman/atom.xml" title="冬瓜的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -23,7 +23,7 @@
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/boringman/css/style.css">
 </head>
 </html>
 <body>
@@ -34,7 +34,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">冬瓜的博客</a>
+        <a href="/boringman/" id="logo">冬瓜的博客</a>
       </h1>
       
     </div>
@@ -42,14 +42,14 @@
       <nav id="main-nav">
         <a id="main-nav-toggle" class="nav-icon"></a>
         
-          <a class="main-nav-link" href="/">Home</a>
+          <a class="main-nav-link" href="/boringman/">Home</a>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          <a class="main-nav-link" href="/boringman/archives">Archives</a>
         
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/boringman/atom.xml" title="RSS Feed"></a>
         
         <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
@@ -64,7 +64,7 @@
   
     <article id="post-ChangeMAC" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/10/09/ChangeMAC/" class="article-date">
+    <a href="/boringman/2019/10/09/ChangeMAC/" class="article-date">
   <time datetime="2019-10-08T16:40:25.000Z" itemprop="datePublished">2019-10-09</time>
 </a>
     
@@ -76,7 +76,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/09/ChangeMAC/">使用脚本修改windows网卡MAC地址</a>
+      <a class="article-title" href="/boringman/2019/10/09/ChangeMAC/">使用脚本修改windows网卡MAC地址</a>
     </h1>
   
 
@@ -96,14 +96,14 @@
 
 </li>
 </ol>
-<p><img src="/2019/10/09/ChangeMAC/DeviceInstanceID.png" alt="设备实例路径">  </p>
+<p><img src="/boringman/2019/10/09/ChangeMAC/DeviceInstanceID.png" alt="设备实例路径">  </p>
 <ol start="3">
 <li><p>“NetworkAddress” 就是当前网卡的MAC地址，值是”000ABC123CBD”形式的字符串。但是当前目录下的”\Ndi\params”目录需要有一项名为”NetworkAddress”的主键，如果没有添加上。添加后会在右侧框中产生一个”(默认)”的字符串，将其值设置为想要修改的MAC地址，值为”000ABC123CBD”格式。此步骤是为网卡设置一个初始MAC地址。</p>
 </li>
 <li><p>在刚刚新建的”NetworkAddress”主键下，添加名为”ParamDesc”的字符串，其作用为指定”NetworkAddress”主键的描述，其值可以自己命名，如”网卡地址”，这样在网卡高级属性中就会出现”网卡地址”选项。</p>
 </li>
 </ol>
-<p><img src="/2019/10/09/ChangeMAC/device.png" alt="适配器设备信息"></p>
+<p><img src="/boringman/2019/10/09/ChangeMAC/device.png" alt="适配器设备信息"></p>
 <ol start="5">
 <li>在“NetworkAddress”的主键下添加名为“Optional”的字符串，其值设为“1”，则以后在网卡的高级属性中选择“网卡地址”时，右边会出现不存在选项(具体作用没有深入探究)。这时在网卡的高级属性界面就可以修改mac地址了。当然也可以直接修改注册表的mac地址，修改键为</li>
 </ol>
@@ -119,10 +119,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://gaogao.com/2019/10/09/ChangeMAC/" data-id="ck1iuc81c00000wdb4avlfk34" class="article-share-link">Share</a>
+      <a data-url="http://gaogao.com/2019/10/09/ChangeMAC/" data-id="ck1iv0sgu0000u4dbjr0emfhn" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/注册表-网卡-MAC-netsh/">注册表 网卡 MAC netsh</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/boringman/tags/注册表-网卡-MAC-netsh/">注册表 网卡 MAC netsh</a></li></ul>
 
     </footer>
   </div>
@@ -133,7 +133,7 @@
   
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/09/09/hello-world/" class="article-date">
+    <a href="/boringman/2019/09/09/hello-world/" class="article-date">
   <time datetime="2019-09-09T15:17:54.734Z" itemprop="datePublished">2019-09-09</time>
 </a>
     
@@ -145,7 +145,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/09/hello-world/">Hello World</a>
+      <a class="article-title" href="/boringman/2019/09/09/hello-world/">Hello World</a>
     </h1>
   
 
@@ -170,7 +170,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://gaogao.com/2019/09/09/hello-world/" data-id="ck1iuc81k00010wdb20uy8dmc" class="article-share-link">Share</a>
+      <a data-url="http://gaogao.com/2019/09/09/hello-world/" data-id="ck1iv0sh20001u4db7z3wnfyh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -193,7 +193,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/注册表-网卡-MAC-netsh/">注册表 网卡 MAC netsh</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/boringman/tags/注册表-网卡-MAC-netsh/">注册表 网卡 MAC netsh</a></li></ul>
     </div>
   </div>
 
@@ -203,7 +203,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/注册表-网卡-MAC-netsh/" style="font-size: 10px;">注册表 网卡 MAC netsh</a>
+      <a href="/boringman/tags/注册表-网卡-MAC-netsh/" style="font-size: 10px;">注册表 网卡 MAC netsh</a>
     </div>
   </div>
 
@@ -212,7 +212,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/boringman/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/boringman/archives/2019/09/">九月 2019</a></li></ul>
     </div>
   </div>
 
@@ -225,11 +225,11 @@
       <ul>
         
           <li>
-            <a href="/2019/10/09/ChangeMAC/">使用脚本修改windows网卡MAC地址</a>
+            <a href="/boringman/2019/10/09/ChangeMAC/">使用脚本修改windows网卡MAC地址</a>
           </li>
         
           <li>
-            <a href="/2019/09/09/hello-world/">Hello World</a>
+            <a href="/boringman/2019/09/09/hello-world/">Hello World</a>
           </li>
         
       </ul>
@@ -252,9 +252,9 @@
     </div>
     <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/boringman/" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="/boringman/archives" class="mobile-nav-link">Archives</a>
   
 </nav>
     
@@ -262,11 +262,11 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <link rel="stylesheet" href="/boringman/fancybox/jquery.fancybox.css">
+  <script src="/boringman/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
+<script src="/boringman/js/script.js"></script>
 
 
 
