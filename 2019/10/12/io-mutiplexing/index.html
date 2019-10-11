@@ -5,15 +5,20 @@
   
 
   
-  <title>冬瓜的博客</title>
+  <title>IO多路复用 | 冬瓜的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="冬瓜的博客">
-<meta property="og:url" content="http://gaogao.com/index.html">
+  <meta name="description" content="1. 同步和异步I/O和多路复用的使用场景目前支持I/O多路复用的系统调用有 select、pselect、pool、epoll，I/O多路复用就是通过一种机制，一个进程可以监视多个描述符，一旦某个描述符就绪，就能通知程序进行相应的读写操作。 同步I/O操作是指，在读写事件就绪后，需要自己负责数据的读写，就是说读写过程是阻塞的。而异步I/O则无需自己负责数据读写，异步I/O操作的实现会负责把数据从">
+<meta name="keywords" content="select pool epoll IO多路复用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IO多路复用">
+<meta property="og:url" content="http://gaogao.com/2019/10/12/io-mutiplexing/index.html">
 <meta property="og:site_name" content="冬瓜的博客">
+<meta property="og:description" content="1. 同步和异步I/O和多路复用的使用场景目前支持I/O多路复用的系统调用有 select、pselect、pool、epoll，I/O多路复用就是通过一种机制，一个进程可以监视多个描述符，一旦某个描述符就绪，就能通知程序进行相应的读写操作。 同步I/O操作是指，在读写事件就绪后，需要自己负责数据的读写，就是说读写过程是阻塞的。而异步I/O则无需自己负责数据读写，异步I/O操作的实现会负责把数据从">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-11T16:59:09.627Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="冬瓜的博客">
+<meta name="twitter:title" content="IO多路复用">
+<meta name="twitter:description" content="1. 同步和异步I/O和多路复用的使用场景目前支持I/O多路复用的系统调用有 select、pselect、pool、epoll，I/O多路复用就是通过一种机制，一个进程可以监视多个描述符，一旦某个描述符就绪，就能通知程序进行相应的读写操作。 同步I/O操作是指，在读写事件就绪后，需要自己负责数据的读写，就是说读写过程是阻塞的。而异步I/O则无需自己负责数据读写，异步I/O操作的实现会负责把数据从">
   
     <link rel="alternate" href="/boringman/atom.xml" title="冬瓜的博客" type="application/atom+xml">
   
@@ -60,9 +65,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-io-mutiplexing" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-io-mutiplexing" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/boringman/2019/10/12/io-mutiplexing/" class="article-date">
   <time datetime="2019-10-11T16:50:34.000Z" itemprop="datePublished">2019-10-12</time>
@@ -75,8 +78,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/boringman/2019/10/12/io-mutiplexing/">IO多路复用</a>
+    <h1 class="article-title" itemprop="name">
+      IO多路复用
     </h1>
   
 
@@ -207,129 +210,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-ChangeMAC" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/boringman/2019/10/09/ChangeMAC/" class="article-date">
-  <time datetime="2019-10-08T16:40:25.000Z" itemprop="datePublished">2019-10-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/boringman/2019/10/09/ChangeMAC/">使用脚本修改windows网卡MAC地址</a>
-    </h1>
+    <a href="/boringman/2019/10/09/ChangeMAC/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">使用脚本修改windows网卡MAC地址</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <meta name="referrer" content="no-referrer">
-# 注册表修改网卡MAC地址
-
-<p>使用regedit 命令打开注册表</p>
-<ol>
-<li><p>在 “HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}”  0001、0002、0003等主键下，找到DriverDesc，此项为网卡描述。</p>
-</li>
-<li><p>实际操作中发现DriverDesc的值是网卡的名字，在不同目录下可能出现相同的名字，猜测是同一个物理网卡虚拟出了多个网卡导致的。尝试观察后发现”DeviceInstanceID”的值是可以唯一标识一个网卡的，但是在网卡被修改mac地址后需要重启网卡，这时候”DeviceInstanceID”会被更新。我使用的策略是，将目标网卡对应的注册表目录写入到文件中，以后就可以在文件中直接读取目录。我的计算机中网卡的设备实例路径是这样的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PCI\VEN_10EC&amp;DEV_8168&amp;SUBSYS_E0001458&amp;REV_0C\4&amp;1dcb0711&amp;0&amp;00E2</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p><img src="/boringman/2019/10/09/ChangeMAC/DeviceInstanceID.png" alt="设备实例路径">  </p>
-<ol start="3">
-<li><p>“NetworkAddress” 就是当前网卡的MAC地址，值是”000ABC123CBD”形式的字符串。但是当前目录下的”\Ndi\params”目录需要有一项名为”NetworkAddress”的主键，如果没有添加上。添加后会在右侧框中产生一个”(默认)”的字符串，将其值设置为想要修改的MAC地址，值为”000ABC123CBD”格式。此步骤是为网卡设置一个初始MAC地址。</p>
-</li>
-<li><p>在刚刚新建的”NetworkAddress”主键下，添加名为”ParamDesc”的字符串，其作用为指定”NetworkAddress”主键的描述，其值可以自己命名，如”网卡地址”，这样在网卡高级属性中就会出现”网卡地址”选项。</p>
-</li>
-</ol>
-<p><img src="/boringman/2019/10/09/ChangeMAC/device.png" alt="适配器设备信息"></p>
-<ol start="5">
-<li>在“NetworkAddress”的主键下添加名为“Optional”的字符串，其值设为“1”，则以后在网卡的高级属性中选择“网卡地址”时，右边会出现不存在选项(具体作用没有深入探究)。这时在网卡的高级属性界面就可以修改mac地址了。当然也可以直接修改注册表的mac地址，修改键为</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE\SYSTEM\\CurrentControlSet\\Control\\Class\\&#123;4D36E972-E325-11CE-BFC1-08002bE10318&#125;\0002\NetworkAddress</span><br></pre></td></tr></table></figure>
-
-<ol start="6">
-<li><p>网卡地址呗重置之后需要重启网络适配器，即先禁用在启用，这时候MAC地址就被修改了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">netsh interface <span class="built_in">set</span> interface 本地连接 disabled</span><br><span class="line">netsh interface <span class="built_in">set</span> interface 本地连接 enabled</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://gaogao.com/2019/10/09/ChangeMAC/" data-id="ck1mdojut0001r4db1o62j4o2" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/boringman/tags/注册表-网卡-MAC-netsh/">注册表 网卡 MAC netsh</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/boringman/2019/09/09/hello-world/" class="article-date">
-  <time datetime="2019-09-09T15:17:54.734Z" itemprop="datePublished">2019-09-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/boringman/2019/09/09/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://gaogao.com/2019/09/09/hello-world/" data-id="ck1mdojud0000r4db32gswpa3" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
