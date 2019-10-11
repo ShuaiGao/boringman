@@ -1,309 +1,428 @@
-
 <!DOCTYPE html>
-<html lang="en" class="loading">
+<html>
 <head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>冬瓜的博客</title>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="google" content="notranslate">
-    <meta name="keywords" content="TriDiamond Obsidian,"> 
-    
-    <meta name="author" content="Mr. Gao"> 
-    <link rel="alternative" href="atom.xml" title="冬瓜的博客" type="application/atom+xml"> 
-    <link rel="icon" href="/boringman/img/favicon.png"> 
-    <link href="/font/Rubik-Bold-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link href="/font/Rubik-Regular-kern-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_2c4p9wqp87z.css">
-    <link rel="stylesheet" href="/boringman/css/obsidian.css">
-    <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+  <meta charset="utf-8">
+  
+
+  
+  <title>冬瓜的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="冬瓜的博客">
+<meta property="og:url" content="http://gaogao.com/index.html">
+<meta property="og:site_name" content="冬瓜的博客">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="冬瓜的博客">
+  
+    <link rel="alternate" href="/boringman/atom.xml" title="冬瓜的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/boringman/css/style.css">
 </head>
 </html>
-<body class="loading">
-    <span id="config-title" style="display:none">冬瓜的博客</span>
-    <div id="loader"></div>
-    <div class="nav">
-    <ul id="menu-menu" class="menu">
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/boringman/" id="logo">冬瓜的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
         
-        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/boringman/page/" title="PAGE">PAGE</a>
-        </li>
+          <a class="main-nav-link" href="/boringman/">Home</a>
         
-    </ul>
-    <p class="copyright" id="copyright">
-        &copy; 2019 Mr. Gao.
-        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
-        Theme <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
-    </p>
-</div>
-
-<div id="container">
+          <a class="main-nav-link" href="/boringman/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/boringman/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://gaogao.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-io-mutiplexing" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/boringman/2019/10/12/io-mutiplexing/" class="article-date">
+  <time datetime="2019-10-11T16:50:34.000Z" itemprop="datePublished">2019-10-12</time>
+</a>
     
-<div id="header">
-    <div>
-        <a class="image-logo animated fadeInDown" href="/"></a>
-        <ul id="menu-menu" class="menu text-menu">
-            
-            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/boringman/page/" title="PAGE" class="menu-link">PAGE</a>
-            </li>
-            
-        </ul>
-        <div class="icon-menu switchmenu gradient-text animated fadeInDown"></div>
-    </div>
-</div>
-<div id="screen">
-    <div id="mark">
-        <div class="cover animated fadeIn" style="
-            animation-delay: 900ms;
-            animation-duration: 2.8s;
-            background-image: 
-                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.56), #100e17),
-                url(/img/cover.jpg);">
-        </div>
-    </div>
+  </div>
+  <div class="article-inner">
     
-    <div id="post0">
-        <p class="animated fadeInDown">十月 12, 2019</p>
-        <h1 class="animated fadeInDown"><a href="/boringman/2019/10/12/io-mutiplexing/" title="IO多路复用" class="posttitle">IO多路复用</a></h1>
-        
-            <p class="post-count animated fadeInDown">
-                
-                    <span>
-                        <b class="iconfont icon-text2"></b>
-                        11k
-                    </span>
-                
-                
-                    <span>
-                        <b class="iconfont icon-timer__s"></b>
-                        10 mins.
-                    </span>
-                
-            </p>
-        
-        <div class="md-content animated fadeIn">
-            
-                <h1 id="1-同步和异步I-O和多路复用的使用场景"><a href="#1-同步和异步I-O和多路复用的使用场景" class="headerlink" title="1. 同步和异步I/O和多路复用的使用场景"></a>1. 同步和异步I/O和多路复用的使用场景</h1><p>目前支持I/O多路复用的系统调用有 select、pselect、pool、epoll，I/O多路复用就是通过一种机制，一个进程可以监视多个描述符，一旦某个描...</p>
-            
-        </div>
-        
-            <ul class="animated fadeInDown post-tags-list"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/boringman/tags/select-pool-epoll-IO多路复用/">select pool epoll IO多路复用</a></li></ul>
-        
-    </div>
     
-</div>
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/boringman/2019/10/12/io-mutiplexing/">IO多路复用</a>
+    </h1>
+  
 
-<div class="screen-gradient-after">
-    <div class="screen-gradient-content">
-        <div class="screen-gradient-content-inside">
-            <div class="bold-underline-links screen-gradient-sponsor">
-                <p>
-                  <span class="typed-text"></span>  
-                </p> 
-            </div>
-        </div>
-    </div>
-</div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-同步和异步I-O和多路复用的使用场景"><a href="#1-同步和异步I-O和多路复用的使用场景" class="headerlink" title="1. 同步和异步I/O和多路复用的使用场景"></a>1. 同步和异步I/O和多路复用的使用场景</h1><p>目前支持I/O多路复用的系统调用有 select、pselect、pool、epoll，I/O多路复用就是通过一种机制，一个进程可以监视多个描述符，一旦某个描述符就绪，就能通知程序进行相应的读写操作。</p>
+<p>同步I/O操作是指，在读写事件就绪后，需要自己负责数据的读写，就是说读写过程是阻塞的。而异步I/O则无需自己负责数据读写，异步I/O操作的实现会负责把数据从内核拷贝到用户空间。</p>
+<p>I/O多路复用是指内核一旦发现进程指定的一个或多个I/O条件准备就绪，就通知该进程。IO多路复用适用一下场合：</p>
+<ol>
+<li>当客户处理多个描述符时，必须使用IO复用</li>
+<li>当一个客户同时处理多个套接口时（很少出现）</li>
+<li>如果一个TCP服务器既要处理监听套接口，又要处理已连接套接口，一般也要用到IO复用</li>
+<li>如果一个服务器既要处理TCP又要处理UDP，一般要使用IO复用</li>
+<li>如果一个服务器处理多个服务或协议，一般要使用IO复用</li>
+</ol>
+<h1 id="2-select、poll、epoll"><a href="#2-select、poll、epoll" class="headerlink" title="2. select、poll、epoll"></a>2. select、poll、epoll</h1><p><code>epoll</code>跟<code>select</code>都能提供多路复用IO的解决方案。在Linux内核里都有支持，其<code>epoll</code>是linux特有的，<code>select</code>是POSIX规定的，一般操作系统均有实现。</p>
+<h2 id="2-1-select"><a href="#2-1-select" class="headerlink" title="2.1 select"></a>2.1 select</h2><h4 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h4><p><code>select</code>函数监视的文件描述符分为三类，分别是<code>writefds</code>、<code>readfds</code>、<code>exceptfds</code>。调用后<code>select</code>函数会进入阻塞，直到有描述符就绪或者超时，函数返回。当<code>select</code>返回后，可以通过遍历<code>fdset</code>，来找到就绪的描述符。</p>
+<p>跨平台是<code>select</code>的一个优点，缺点在于单个进程能够监视的文件描述符的数量存在最大上限。在Linux上一般为1024，据说可以通过修改宏定义甚至重新编译内核的方式修改这一限制，但这样也会造成效率的降低。</p>
+<h4 id="select存在的一些问题"><a href="#select存在的一些问题" class="headerlink" title="select存在的一些问题"></a>select存在的一些问题</h4><ol>
+<li>单个进程监听的<strong><em>FD数量有一定限制</em></strong>，由FD_SETSIZE设置，默认值是1024</li>
+<li>select对FD的扫描是 <strong><em>线性</em></strong> 的，即采用轮询的方法，<strong><em>效率比较低</em></strong></li>
+<li>需要维护一个用来存在大量FD的数据结构，这样会使得用户空间和内核空间在传递结构时<strong><em>复制开销</em></strong>比较大</li>
+</ol>
+<h2 id="2-2-pool"><a href="#2-2-pool" class="headerlink" title="2.2 pool"></a>2.2 pool</h2><h4 id="基本原理-1"><a href="#基本原理-1" class="headerlink" title="基本原理"></a>基本原理</h4><p><code>pool</code>本质上和<code>select</code>没有区别，它将用户传入的数组拷贝到内存空间，然后查询每个fd对应的设备状态，如果就绪则加入等待队列，如果遍历完所有fd后没有发现就绪设备，则挂起当前进程，直到设备就绪或主动超时，被唤醒后他又要再次遍历fd。这个过程经历了多次无谓的遍历。另外<code>pool</code>fd的存储使用链表，所以没有最大连接数的限制。</p>
+<h4 id="pool的一些特点"><a href="#pool的一些特点" class="headerlink" title="pool的一些特点"></a>pool的一些特点</h4><ol>
+<li>大量的fd数组被整体复制于用户态和内核地址空间之间，而不管这样的复制是不是有意义</li>
+<li><code>pool</code>存在“<strong><em>水平触发</em></strong>”，如果报告了fd，没有被处理，或者没有被处理完，那么下次<code>pool</code>时会再次报告该fd</li>
+</ol>
+<p><code>select</code>和<code>pool</code>对比</p>
+<ul>
+<li>都需要在返回后，通过<strong><em>遍历文件描述符</em></strong>，来获取已经就绪的socket。事实上，同时连接的大量客户端在同一时刻可能只有很少的处于就绪状态，因此随着监视的描述符数量的增长，其效率也会线性下降<h2 id="2-3-epoll"><a href="#2-3-epoll" class="headerlink" title="2.3 epoll"></a>2.3 epoll</h2><code>epoll</code>是之前<code>select</code>和<code>pool</code>的增强版本。相当于<code>select</code>和<code>pool</code>来说，<code>epoll</code>更加灵活，没有描述符限制。<code>epoll</code>使用一个文件描述符管理多个描述符，将用户关心的文件描述符事件存放到内核的一个事件表中，这样在用户空间和内核空间只需要拷贝一次。<h4 id="基本原理-2"><a href="#基本原理-2" class="headerlink" title="基本原理"></a>基本原理</h4><code>epoll</code>支持水平触发和边缘触发，最大的特点在于边缘触发，它只告诉进程哪些fd刚刚变为就绪状态，并且只通知一次。还有一个特点是，epoll使用事件的就绪通知方式，通过epoll_ctl注册fd，一旦该fd就绪，内核就会采用callback的回调机制来激活fd，epoll_wait便可以收到通知，避免了轮询造成的性能损失</li>
+</ul>
+<h4 id="epoll工作模式"><a href="#epoll工作模式" class="headerlink" title="epoll工作模式"></a>epoll工作模式</h4><ul>
+<li><strong>LT模式</strong>，（level trigger）默认模式，持续有事件通知，更不容易出问题</li>
+<li><strong>ET模式</strong>，（edge trigger）高速模式，只通知一次，该次操作是否完成由应用层判断</li>
+</ul>
+<p><strong><em>注意：如果没有大量的<code>idle-connection</code>或者<code>dead-connection</code>，epoll的效率并不会比select/pool高很多，但是当遇到大量的<code>idle-connection</code>，就会发现epoll的效率大大高于select/pool</em></strong></p>
+<h4 id="EPOLL的优点（为什么快）"><a href="#EPOLL的优点（为什么快）" class="headerlink" title="EPOLL的优点（为什么快）"></a>EPOLL的优点（为什么快）</h4><ul>
+<li>没有最大并发连接的数量限制</li>
+<li>内部维护了一个就绪列表</li>
+<li>epoll_wait时直接去就绪列表中的数据，没有数据等待</li>
+<li>使用了红黑树，每一个文件描述符都是红黑树上的一个节点，提高了检索速度（非轮询检索），不会随着fd数目的增加效率下降</li>
+<li>调用epoll_ctl，将fd加入红黑树，并注册回调函数，若改fd有中断则加入就绪列表</li>
+</ul>
+<h1 id="3-函数原型"><a href="#3-函数原型" class="headerlink" title="3 函数原型"></a>3 函数原型</h1><h2 id="3-1-SELECT"><a href="#3-1-SELECT" class="headerlink" title="3.1 SELECT"></a>3.1 SELECT</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sys/select.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">select</span><span class="params">(<span class="keyword">int</span> nfds, fd_set FAR* readfds, fd_set* writefds, fd_set* exceptfds, <span class="keyword">const</span> struct timeval* timeout)</span></span>;</span><br></pre></td></tr></table></figure>
 
-    <div id="primary">
-        
-<div class="post" id="post">
-    <div class="post-cover" style="
-        background-image: 
-            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-            url(/img/welcome-cover.jpg);">
+<p>参数：</p>
+<ul>
+<li><code>nfds</code>：是一个整数值，是监听的最大文件描述符+1</li>
+<li><code>readfds</code>：（可选）指针，指向一组等待可读性检查的套接口</li>
+<li><code>writefds</code>：（可选）指针，指向一组等待可写性检查的套接口</li>
+<li><code>exceptfds</code>：（可选）指针，指向一组等待错误检查的套接口</li>
+<li><code>timeout</code>:  select()最多等待时间，NULL为阻塞操作</li>
+</ul>
+<p>FD_SET操作</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在set中设置文件描述符fd</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">FD_SET</span><span class="params">(<span class="keyword">int</span> fd, fd_set *<span class="built_in">set</span>)</span></span>;</span><br><span class="line"><span class="comment">//清除set中的fd位</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">FD_CLR</span><span class="params">(<span class="keyword">int</span> fd, fd_set* <span class="built_in">set</span>)</span></span>;</span><br><span class="line"><span class="comment">//判断set中是否设置了文件描述符fd</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">FD_ISSET</span><span class="params">(<span class="keyword">int</span> fd, fd_set* <span class="built_in">set</span>)</span></span>;</span><br><span class="line"><span class="comment">//清空set中的所有位</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">FD_ZERO</span><span class="params">(fd_set *<span class="built_in">set</span>)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-2-EPOLL"><a href="#3-2-EPOLL" class="headerlink" title="3.2 EPOLL"></a>3.2 EPOLL</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//EPOLL接口</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">epoll_create</span><span class="params">(<span class="keyword">int</span> size)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>参数：</p>
+<ul>
+<li><strong>size</strong> 可以关注的最大连接数</li>
+<li><strong>返回值</strong> epoll新建的fd</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注册EPOLL事件</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">epoll_ctl</span><span class="params">(<span class="keyword">int</span> epfd, <span class="keyword">int</span> op, <span class="keyword">int</span> fd, struct epoll_event *event)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>参数：</p>
+<ul>
+<li><strong>epfd</strong> epoll的文件描述符</li>
+<li><strong>op</strong> 操作类型</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>op枚举</strong></th>
+<th>操作类型描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>EPOLL_CTL_ADD</strong></td>
+<td>注册新的fd到epfd中</td>
+</tr>
+<tr>
+<td><strong>EPOLL_CTL_MOD</strong></td>
+<td>修改已经注册的fd的监听事件</td>
+</tr>
+<tr>
+<td><strong>EPOLL_CTL_DEL</strong></td>
+<td>从epfd中删除一个fd</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>fd</strong> 操作的文件描述符</li>
+<li><strong>event</strong> epoll_event结构<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">epoll_event</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">uint32_t</span> events;   <span class="comment">/* Epoll events */</span></span><br><span class="line">  <span class="keyword">epoll_data_t</span> data;    <span class="comment">/* User data variable */</span></span><br><span class="line">&#125; __attribute__ ((__packed__));</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">union</span> epoll_data</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">void</span> *ptr;</span><br><span class="line">  <span class="keyword">int</span> fd;</span><br><span class="line">  <span class="keyword">uint32_t</span> u32;</span><br><span class="line">  <span class="keyword">uint64_t</span> u64;</span><br><span class="line">&#125; <span class="keyword">epoll_data_t</span>;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><code>epoll_event.events</code> 枚举</p>
+<ul>
+<li><strong>EPOLLIN</strong>  对应文件的描述符可读（包括对端SOCKET正常关闭）</li>
+<li><strong>EPOLLOUT</strong> 对应的文件描述符可写</li>
+<li><strong>EPOLLPRI</strong> 对应文件描述符有紧急的是数据可读，表示有外带数据到来</li>
+<li><strong>EPOLLERR</strong> 对应文件描述符发生错误</li>
+<li><strong>EPOLLHUP</strong> 对应的文件描述符被挂断</li>
+<li><strong>EPOLLET</strong> 将EPOLL设置为边缘触发（Edge Triggered）模式，这是相对于水平出发（Level Triggered）来说的</li>
+<li><strong>RPOLLONESHOT</strong> 只监听一次事件，当监听完这次事件之后，如果还需要继续监听这个socket的话，需要再次把这个socket加入到EPOLL队列里</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//EPOLL等待返回事件</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">epoll_wait</span><span class="params">(<span class="keyword">int</span> epfd, struct rpoll_event* event, <span class="keyword">int</span> maxevents, <span class="keyword">int</span> timeout)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>参数：</p>
+<ul>
+<li><strong>epfd</strong> epoll的文件描述符</li>
+<li><strong>events</strong> 活跃事件集合</li>
+<li><strong>maxevents</strong> 每次接收最大事件数量</li>
+<li><strong>timeout</strong> 超时时间</li>
+</ul>
+
+      
     </div>
-    <div class="else">
-        <p>十月 09, 2019</p>
-        <h3><a href="/boringman/2019/10/09/ChangeMAC/" title="使用脚本修改windows网卡MAC地址" class="posttitle">使用脚本修改windows网卡MAC地址</a></h3>
+    <footer class="article-footer">
+      <a data-url="http://gaogao.com/2019/10/12/io-mutiplexing/" data-id="ck1merrcw000344dblf3am9bh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/boringman/tags/select-pool-epoll-IO多路复用/">select pool epoll IO多路复用</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ChangeMAC" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/boringman/2019/10/09/ChangeMAC/" class="article-date">
+  <time datetime="2019-10-08T16:40:25.000Z" itemprop="datePublished">2019-10-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
         
-            <p class="post-count animated fadeInDown">
-                
-                    <span>
-                        <b class="iconfont icon-text2"></b>
-                        2.3k
-                    </span>
-                
-                
-                    <span>
-                        <b class="iconfont icon-timer__s"></b>
-                        2 mins.
-                    </span>
-                
-            </p>
-        
-        <div class="md-content">
-            
-                <meta name="referrer" content="no-referrer">
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/boringman/2019/10/09/ChangeMAC/">使用脚本修改windows网卡MAC地址</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <meta name="referrer" content="no-referrer">
 # 注册表修改网卡MAC地址
 
 <p>使用regedit 命令打开注册表</p>
 <ol>
 <li><p>在 “HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}”  0001、0002、0003等主键下，找到DriverDesc，此项为网卡描述。</p>
 </li>
-<li><p>实际操作中发现DriverDesc的值是网卡的名字，在不同目录下可能出现相同的名字，猜测是同一个物理网卡虚拟出了多个网卡导致的。尝试观察后发现”...</p></li></ol>
-            
-        </div>
-        
-            <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/boringman/tags/注册表-网卡-MAC-netsh/">注册表 网卡 MAC netsh</a></li></ul>
-        
+<li><p>实际操作中发现DriverDesc的值是网卡的名字，在不同目录下可能出现相同的名字，猜测是同一个物理网卡虚拟出了多个网卡导致的。尝试观察后发现”DeviceInstanceID”的值是可以唯一标识一个网卡的，但是在网卡被修改mac地址后需要重启网卡，这时候”DeviceInstanceID”会被更新。我使用的策略是，将目标网卡对应的注册表目录写入到文件中，以后就可以在文件中直接读取目录。我的计算机中网卡的设备实例路径是这样的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PCI\VEN_10EC&amp;DEV_8168&amp;SUBSYS_E0001458&amp;REV_0C\4&amp;1dcb0711&amp;0&amp;00E2</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><img src="/boringman/2019/10/09/ChangeMAC/DeviceInstanceID.png" alt="设备实例路径">  </p>
+<ol start="3">
+<li><p>“NetworkAddress” 就是当前网卡的MAC地址，值是”000ABC123CBD”形式的字符串。但是当前目录下的”\Ndi\params”目录需要有一项名为”NetworkAddress”的主键，如果没有添加上。添加后会在右侧框中产生一个”(默认)”的字符串，将其值设置为想要修改的MAC地址，值为”000ABC123CBD”格式。此步骤是为网卡设置一个初始MAC地址。</p>
+</li>
+<li><p>在刚刚新建的”NetworkAddress”主键下，添加名为”ParamDesc”的字符串，其作用为指定”NetworkAddress”主键的描述，其值可以自己命名，如”网卡地址”，这样在网卡高级属性中就会出现”网卡地址”选项。</p>
+</li>
+</ol>
+<p><img src="/boringman/2019/10/09/ChangeMAC/device.png" alt="适配器设备信息"></p>
+<ol start="5">
+<li>在“NetworkAddress”的主键下添加名为“Optional”的字符串，其值设为“1”，则以后在网卡的高级属性中选择“网卡地址”时，右边会出现不存在选项(具体作用没有深入探究)。这时在网卡的高级属性界面就可以修改mac地址了。当然也可以直接修改注册表的mac地址，修改键为</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE\SYSTEM\\CurrentControlSet\\Control\\Class\\&#123;4D36E972-E325-11CE-BFC1-08002bE10318&#125;\0002\NetworkAddress</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li><p>网卡地址呗重置之后需要重启网络适配器，即先禁用在启用，这时候MAC地址就被修改了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">netsh interface <span class="built_in">set</span> interface 本地连接 disabled</span><br><span class="line">netsh interface <span class="built_in">set</span> interface 本地连接 enabled</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+      
     </div>
-</div>
+    <footer class="article-footer">
+      <a data-url="http://gaogao.com/2019/10/09/ChangeMAC/" data-id="ck1merrci000044dbcklhcpj2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/boringman/tags/注册表-网卡-MAC-netsh/">注册表 网卡 MAC netsh</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
 
 
-
-<div class="post" id="post">
-    <div class="post-cover" style="
-        background-image: 
-            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-            url(/img/welcome-cover.jpg);">
-    </div>
-    <div class="else">
-        <p>九月 09, 2019</p>
-        <h3><a href="/boringman/2019/09/09/hello-world/" title="Hello World" class="posttitle">Hello World</a></h3>
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/boringman/2019/09/09/hello-world/" class="article-date">
+  <time datetime="2019-09-09T15:17:54.734Z" itemprop="datePublished">2019-09-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
         
-            <p class="post-count animated fadeInDown">
-                
-                    <span>
-                        <b class="iconfont icon-text2"></b>
-                        2.4k
-                    </span>
-                
-                
-                    <span>
-                        <b class="iconfont icon-timer__s"></b>
-                        2 mins.
-                    </span>
-                
-            </p>
-        
-        <div class="md-content">
-            
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/boringman/2019/09/09/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
-<p>More...</p>
-            
-        </div>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://gaogao.com/2019/09/09/hello-world/" data-id="ck1merrcr000144dblipj57fx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
         
-    </div>
-</div>
-
-
-
-    </div>
+          <aside id="sidebar">
+  
     
-</div>
-<div id="preview"></div>
 
-</body>
-<footer>
-    <!-- <svg class="bottom-wave" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1440 240"><path fill="#100e17" fill-opacity="1" d="M0,128L34.3,133.3C68.6,139,137,149,206,144C274.3,139,343,117,411,117.3C480,117,549,139,617,128C685.7,117,754,75,823,74.7C891.4,75,960,117,1029,144C1097.1,171,1166,181,1234,176C1302.9,171,1371,149,1406,138.7L1440,128L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg> -->
-    <p class="copyright" id="copyright">
-        &copy; 2019
-        <span class="gradient-text">
-            Mr. Gao
-        </span>.
-        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
-        Theme <span class="gradient-text"><a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a></span>
-    </p>
-</footer>
-<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
-<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
-<script src="/boringman/js/plugin.js"></script>
-<script src="/boringman/js/obsidian.js"></script>
-<script src="/boringman/js/jquery.truncate.js"></script>
-<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
-<link rel="stylesheet" href="/boringman/photoswipe/photoswipe.css">
-<link rel="stylesheet" href="/boringman/photoswipe/default-skin/default-skin.css">
-<script src="/boringman/photoswipe/photoswipe.min.js"></script>
-<script src="/boringman/photoswipe/photoswipe-ui-default.min.js"></script>
-
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <!--  Controls are self-explanatory. Order can be changed. -->
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-        </div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/boringman/tags/select-pool-epoll-IO多路复用/">select pool epoll IO多路复用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/boringman/tags/注册表-网卡-MAC-netsh/">注册表 网卡 MAC netsh</a></li></ul>
     </div>
-</div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/boringman/tags/select-pool-epoll-IO多路复用/" style="font-size: 10px;">select pool epoll IO多路复用</a> <a href="/boringman/tags/注册表-网卡-MAC-netsh/" style="font-size: 10px;">注册表 网卡 MAC netsh</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/boringman/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/boringman/archives/2019/09/">September 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/boringman/2019/10/12/io-mutiplexing/">IO多路复用</a>
+          </li>
+        
+          <li>
+            <a href="/boringman/2019/10/09/ChangeMAC/">使用脚本修改windows网卡MAC地址</a>
+          </li>
+        
+          <li>
+            <a href="/boringman/2019/09/09/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Mr. Gao<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/boringman/" class="mobile-nav-link">Home</a>
+  
+    <a href="/boringman/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/boringman/fancybox/jquery.fancybox.css">
+  <script src="/boringman/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/boringman/js/script.js"></script>
 
 
 
-    <!-- Highlight.js -->
-    <link rel="stylesheet" href="/boringman/css/dracula.css">
-    <script src="//cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js">
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            document.querySelectorAll('pre code').forEach((block) => {
-                hljs.highlightBlock(block);
-            });
-        });
-    </script>
-
-
-<script>
-    function initialTyped () {
-        var typedTextEl = $('.typed-text');
-        if (typedTextEl && typedTextEl.length > 0) {
-            var typed = new Typed('.typed-text', {
-                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
-                typeSpeed: 90,
-                loop: true,
-                loopCount: Infinity,
-                backSpeed: 20,
-            });
-        }
-    }
-
-    if ($('.article-header') && $('.article-header').length) {
-        $(document).ready(function () {
-            initialTyped();
-        });
-    }
-</script>
+  </div>
+</body>
 </html>
